@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jardim de Canaã</title>
+  <link rel="stylesheet" href="/csspages/style.css">
+</head>
+<body>
 
+  
+  <header class="topbar" id="topbar">
+    <div class="ia_content" id="iacontent">
+        <h2>Olá, sou a Canaã! <br> Como posso te ajudar?</h2>
+        <div class="textsend">
+            <input type="text" placeholder="Digite aqui!">
+            <button><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/0b4745/paper-plane.png" alt="paper-plane"/></button>
+        </div>
+    </div>
+    <button class="topbar__btn" type="button" aria-label="Início" id="btnia">
+      <span class="img-slot img-slot--logo"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/0b4745/natural-food.png" alt="natural-food"/></span>
+    </button>
+    <button class="topbar__btn__close" type="button" aria-label="Início" id="btnclose">
+      <span class="img-slot img-slot--logo"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/></span>
+    </button>
+  </header>
+
+  
+  <main class="tela">
+
+    <section class="caixa">
+      <div class="caixa__valor">
+        <span class="caixa__rotulo">Valor em caixa</span>
+        <span class="caixa__numero" id="caixa">R$</span>
+      </div>
+
+      <h1 class="caixa__titulo">Controle financeiro</h1>
+      <p class="caixa__texto">Controle suas finanças em um só lugar, entradas, saídas e investimentos.</p>
+      <button class="btn" type="button">Gerenciar caixa</button>
+    </section>
+
+    <section class="grade">
+      <article class="card card--alto">
+        <h2 class="card__titulo">Produção</h2>
+        <p class="card__texto">Toda a produção listada. Produtos em cura e prontos para venda.</p>
+      </article>
+
+      <article class="card card--alto">
+        <h2 class="card__titulo">Estoque</h2>
+        <p class="card__texto">Controle quantidade de matéria prima e materiais para uso.</p>
+      </article>
+    </section>
+
+    <article class="card card--largo">
+      <h2 class="card__titulo">Meus investimentos</h2>
+      <p class="card__texto">Analise e controle de investimentos, parcerias, anúncios ADS e muito mais.</p>
+    </article>
+
+    <article class="card card--largo">
+      <h2 class="card__titulo">Contas a pagar</h2>
+      <p class="card__texto">Gerencie valores que estão pendentes.</p>
+    </article>
+
+  </main>
+
+  <!-- ===== PÁGINA: VENDAS (CONTROLE DE PEDIDOS) ===== -->
+  <main class="tela" id="pagina-vendas">
+
+    <h1 class="pagina-titulo">Controle de pedidos</h1>
+
+    <button class="btn btn--adicionar" type="button" id="btn-adicionar-pedido">Adicionar pedido</button>
+
+    <!-- Os pedidos são inseridos aqui pelo JavaScript -->
+    <div class="lista-pedidos" id="lista-pedidos"></div>
+
+
+  </main>
+
+  <!-- ===== PÁGINA: PRODUTOS ===== -->
+  <main class="tela" id="pagina-produtos">
+
+    <h1 class="pagina-titulo">Produtos</h1>
+
+    <article class="card card--destaque">
+      <h2 class="card__titulo card__titulo--normal">Ficha técnica</h2>
+      <p class="card__texto">Descreva os produtos e controle de ficha técnica, modo de produção, receitas, cura e etc.</p>
+    </article>
+
+    <section class="grade">
+      <article class="card card--alto">
+        <h2 class="card__titulo">Produção</h2>
+        <p class="card__texto">Toda a produção listada. Produtos em cura e prontos para venda.</p>
+      </article>
+
+      <article class="card card--alto">
+        <h2 class="card__titulo">Estoque</h2>
+        <p class="card__texto">Controle quantidade de matéria prima e materiais para uso.</p>
+      </article>
+    </section>
+
+    <section class="secao">
+      <div class="secao__cabecalho">
+        <div>
+          <h2 class="secao__titulo secao__titulo--caixa-alta">Catálogo</h2>
+          <p class="secao__texto">Todos seus produtos listados e estoque pronto.</p>
+        </div>
+        <button class="btn-mais" type="button" id="btn-adicionar-produto" aria-label="Adicionar produto">
+          <span class="img-slot img-slot--mais"></span>
+        </button>
+      </div>
+
+      <!-- Os produtos são inseridos aqui pelo JavaScript -->
+      <div class="lista" id="lista-produtos"></div>
+    </section>
+
+  </main>
+
+  <!-- ===== PÁGINA: FORNECEDORES & APOIADORES ===== -->
+  <main class="tela" id="pagina-apoiadores">
+
+    <h1 class="pagina-titulo pagina-titulo--longo">Fornecedores &amp; Apoiadores</h1>
+
+    <article class="card card--destaque">
+      <h2 class="card__titulo card__titulo--normal">Fornecedores</h2>
+      <p class="card__texto">Salve contatos e links diretos de fornecedores padrões.</p>
+    </article>
+
+    <article class="card card--destaque">
+      <h2 class="card__titulo card__titulo--normal">Apoiadores</h2>
+      <p class="card__texto">Contato de influencers ou anunciadores da marca.</p>
+    </article>
+
+    <section class="secao">
+      <div class="secao__cabecalho">
+        <div>
+          <h2 class="secao__titulo">Cupons</h2>
+          <p class="secao__texto">Todos os cupons cadastrados.</p>
+        </div>
+        <button class="btn-mais" type="button" id="btn-adicionar-cupom" aria-label="Adicionar cupom">
+          <span class="img-slot img-slot--mais"></span>
+        </button>
+      </div>
+
+      <!-- Os cupons são inseridos aqui pelo JavaScript -->
+      <div class="lista" id="lista-cupons"></div>
+    </section>
+
+  </main>
+
+  <!-- ===== NAVBAR INFERIOR (fixa em todas as telas) ===== -->
+  <nav class="navbar">
+    <a class="navbar__item navbar__item--ativo" id="controle">
+      <span class="img_nav_active"><img width="38" height="38" src="https://img.icons8.com/deco-glyph/0b4745/coins.png" alt="coins"/></span>
+      <h3>Controle</h3>
+    </a>
+
+    <a class="navbar__item" id="vendas">
+      <span class="img_nav"><img width="38" height="38" src="https://img.icons8.com/pastel-glyph/64/shopping-bags--v1.png" alt="shopping-bags--v1"/></span>
+      <h3>Vendas</h3>
+    </a>
+
+    <a class="navbar__item" id="produtos">
+      <span class="img_nav"><img width="38" height="38" src="https://img.icons8.com/ios-filled/50/box--v1.png" alt="box--v1"/></span>
+      <h3>Produtos</h3>
+    </a>
+
+    <a class="navbar__item" id="Apoiadores">
+      <span class="img_nav"><img width="38" height="38" src="https://img.icons8.com/ios-filled/50/handshake-heart.png" alt="handshake-heart"/></span>
+      <h3>Apoiadores</h3>
+    </a>
+  </nav>
+
+  <script src="dash/index.js"></script>
+</body>
+</html>
