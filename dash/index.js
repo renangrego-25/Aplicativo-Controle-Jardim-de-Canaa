@@ -120,3 +120,19 @@ btnClose.addEventListener('click', () => {
     btnClose.classList.remove('active');
 })
 
+//Página de controle de caixa
+
+const paginaCaixa = document.getElementById('pagina-caixa');
+const voltarCaixa = document.getElementById('voltarcaixa');
+
+document.getElementById('abrircaixa').addEventListener('click', () => {
+
+    paginaCaixa.classList.add('active');
+
+    voltarCaixa.addEventListener('click', (e) =>{
+        e.preventDefault();
+
+        paginaCaixa.classList.remove('active');
+    })
+})
+

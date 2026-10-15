@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   
   <header class="topbar" id="topbar">
     <div class="ia_content" id="iacontent">
@@ -25,6 +24,9 @@
     </button>
   </header>
 
+  <section class="intro">
+    <img src="Images/Logo nova sem fundo.png" alt="logo">
+  </section>
   
   <main class="tela">
 
@@ -36,7 +38,7 @@
 
       <h1 class="caixa__titulo">Controle financeiro</h1>
       <p class="caixa__texto">Controle suas finanças em um só lugar, entradas, saídas e investimentos.</p>
-      <button class="btn" type="button">Gerenciar caixa</button>
+      <button class="btn" type="button" id="abrircaixa">Gerenciar caixa</button>
     </section>
 
     <section class="grade">
@@ -63,6 +65,9 @@
       </article>
     </div>
 
+    <div>
+      
+    </div>
 
   </main>
 
@@ -149,6 +154,60 @@
     </section>
 
   </main>
+
+
+  <!-- ===== PÁGINA: CONTROLE FINANCEIRO (CAIXA) ===== -->
+  <main class="tela" id="pagina-caixa">
+
+    <section class="total">
+      <div class="voltar" id="voltarcaixa">
+        <a><img width="50" height="50" src="https://img.icons8.com/material-rounded/0b4745/back--v1.png" alt="back--v1"/></a>
+      </div>
+      <h1 class="total__rotulo">Valor em caixa</h1>
+      <p class="total__valor" id="valor-caixa">R$ </p>
+    </section>
+
+    <section class="fluxo">
+      <div class="fluxo__coluna">
+        <h2 class="fluxo__titulo">Entradas</h2>
+        <button class="fluxo__caixa" type="button" id="btn-entradas">R$ </button>
+      </div>
+
+      <div class="fluxo__coluna">
+        <h2 class="fluxo__titulo">Saídas</h2>
+        <button class="fluxo__caixa" type="button" id="btn-saidas">R$ </button>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="secao__cabecalho secao__cabecalho--centro">
+        <h2 class="secao__titulo secao__titulo--caixa-alta secao__titulo--menor">Valores para investimento</h2>
+        <button class="btn-editar" type="button" id="btn-editar-investimento" aria-label="Editar investimento">
+          <span class="img-slot img-slot--lapis"></span>
+        </button>
+      </div>
+    </section>
+
+    <div class="invest" id="investimento">
+      <span class="invest__nome">Investimento ativo</span>
+      <span class="invest__valor" id="valor-investimento">R$ </span>
+    </div>
+
+    <section class="secao">
+      <div class="secao__cabecalho secao__cabecalho--centro">
+        <h2 class="secao__titulo secao__titulo--caixa-alta secao__titulo--menor">Últimas transações</h2>
+        <button class="btn-mais" type="button" id="btn-adicionar-transacao" aria-label="Adicionar transação">
+          <span class="img-slot img-slot--mais"><img width="50" height="50" src="https://img.icons8.com/ios-glyphs/3e8685/add--v1.png" alt="add--v1"/></span>
+        </button>
+      </div>
+
+      <!-- As transações são inseridas aqui pelo JavaScript -->
+      <div class="lista" id="lista-transacoes"></div>
+    </section>
+
+  </main>
+
+
 
   <!-- ===== NAVBAR INFERIOR (fixa em todas as telas) ===== -->
   <nav class="navbar">
