@@ -1,0 +1,27 @@
+{
+  "name": "aplicativo-controle-jardim-de-canaa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renangrego-25/Aplicativo-Controle-Jardim-de-Canaa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/renangrego-25/Aplicativo-Controle-Jardim-de-Canaa/issues"
+  },
+  "homepage": "https://github.com/renangrego-25/Aplicativo-Controle-Jardim-de-Canaa#readme",
+  "dependencies": {
+    "@capacitor-community/sqlite": "^8.1.1",
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3"
+  }
+}
