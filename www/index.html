@@ -165,6 +165,7 @@
       </div>
       <h1 class="total__rotulo">Valor em caixa</h1>
       <p class="total__valor" id="valor-caixa">R$ </p>
+      <button id="editvalor">Editar valor inicial</button>
     </section>
 
     <section class="fluxo">
@@ -193,6 +194,8 @@
       <span class="invest__valor" id="valor-investimento">R$ </span>
     </div>
 
+    <button id="abrir-invest">gerenciar investimentos</button>
+
     <section class="secao">
       <div class="secao__cabecalho secao__cabecalho--centro">
         <h2 class="secao__titulo secao__titulo--caixa-alta secao__titulo--menor">Últimas transações</h2>
@@ -203,7 +206,43 @@
 
       <!-- As transações são inseridas aqui pelo JavaScript -->
       <div class="lista" id="lista-transacoes"></div>
+
+
     </section>
+
+
+    <div class="valorinicial" id="vinicial">
+      <div class="editvalor" id="editvalor">
+        <div class="voltar" id="voltarInicial">
+          <a><img width="50" height="50" src="https://img.icons8.com/material-rounded/fbf4e1/back--v1.png" alt="back--v1"/></a>
+        </div>
+        <h2>Adicione o valor inicial</h2>
+        <input type="number" id="valor">
+        <button id="salvarnovo">Salvar</button>
+      </div>
+    </div>
+
+    <div class="addtrans" id="addtrans">
+      <div class="voltar" id="fechartrans">
+          <a><img width="50" height="50" src="https://img.icons8.com/material-rounded/fbf4e1/back--v1.png" alt="back--v1"/></a>
+      </div>
+      <h2>Adicionar nova transação</h2>
+      <label for="#nometransação">Descrição ou Nome</label>
+      <input type="text" placeholder="Digite aqui">
+      <label for="valortransação">Valor</label>
+      <input type="number" title="text">
+      <label for="valortransação">Data de transação</label>
+      <input type="date">
+      <label for="tipo">Tipo</label>
+      <form action=""></form>
+      <select name="tipo" id="tipotran">
+        <option value="entrada">Entrada</option>
+        <option value="saída">Saída</option>
+      </select>
+
+      <button type="submit" id="confirmartransacao">Confirmar</button>
+
+    </div>
 
   </main>
 

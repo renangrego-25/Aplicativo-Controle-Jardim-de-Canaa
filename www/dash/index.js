@@ -136,3 +136,33 @@ document.getElementById('abrircaixa').addEventListener('click', () => {
     })
 })
 
+const vinicial = document.getElementById('vinicial');
+const valorincial = document.getElementById('valor').value;
+
+function fecharVinicial() {
+    vinicial.classList.remove('active');
+}
+
+document.getElementById('editvalor').addEventListener('click', () => {
+    vinicial.classList.add('active');
+
+    document.getElementById('salvarnovo').addEventListener('click', fecharVinicial);
+
+    document.getElementById('voltarInicial').addEventListener('click', fecharVinicial);
+})
+
+const addTransacao = document.getElementById('addtrans');
+
+function fecharTransaçao() {
+    addTransacao.classList.remove('active');
+}
+
+document.getElementById('btn-adicionar-transacao').addEventListener('click', (e) => {
+    e.preventDefault;
+
+    addTransacao.classList.add('active');
+
+    document.getElementById('confirmartransacao').addEventListener('click', fecharTransaçao);
+
+    document.getElementById('fechartrans').addEventListener('click', fecharTransaçao);
+})

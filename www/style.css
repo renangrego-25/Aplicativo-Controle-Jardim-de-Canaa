@@ -527,6 +527,7 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
   background-color: var(--cor-fundo);
   z-index: 100;
   display: none;
+  transition: 0.2s ease-in-out;
 }
 
 #pagina-caixa.active{
@@ -544,6 +545,16 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
   border-radius: 0 0 24px 24px;
   padding: 36px 20px 22px;
   text-align: center;
+}
+
+.total button{
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: #ffe5c2;
+  margin-top: 20px;
+  background-color: var(--cor-verde);
+  border: none;
+  font-family: var(--fonte-titulo);
 }
 
 .total__rotulo {
@@ -599,11 +610,26 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
 /* Investimento ativo: nome em verde + valor em bege */
 .invest {
   display: flex;
+
   margin: 0 16px;
   min-height: 56px;
   border: 1px solid var(--cor-verde);
   border-radius: 12px;
   overflow: hidden;
+}
+
+#abrir-invest{
+  text-align: center;
+  width: 440px ;
+  padding: 15px 20px;
+  margin: 10px 20px;
+  background-color: #0b4745;
+  border: none;
+  border-radius: 10px;
+  color: var(--cor-container);
+  text-transform: uppercase;
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
 }
 
 .invest__nome,
@@ -629,4 +655,131 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
   background-color: var(--cor-container);
   color: var(--cor-verde);
   font-size: 1.15rem;
+}
+
+.valorinicial{
+  display: flex;
+  position: fixed;
+  top: 0px;
+  backdrop-filter: blur(5px);
+  height: 100vh;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease-in-out;
+}
+
+.valorinicial.active{
+  visibility: visible;
+  opacity: 1;
+}
+
+.valorinicial .editvalor{
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cor-verde);
+  color: var(--cor-container);
+  height: 250px;
+  width: 450px;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 10px;
+  align-items: center;
+
+  .voltar{
+    text-align: left;
+    width: 100%;
+  }
+
+  input{
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  button{
+    padding: 5px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: var(--cor-verde);
+    width: 150px;
+    margin-top: 20px;
+    background-color: var(--cor-container);
+    border: none;
+    font-family: var(--fonte-titulo);
+  }
+
+  h2{
+    color: var(--cor-container);
+  }
+}
+
+.addtrans{
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  background-color: var(--cor-verde);
+  padding-top: 100px;
+  color: var(--cor-container);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease-in-out;
+
+
+  .voltar{
+    text-align: left;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  h2{
+    color: var(--cor-container);
+  }
+}
+
+.addtrans.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.addtrans input{
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.addtrans select{
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+}
+
+.addtrans button{
+    padding: 10px 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: var(--cor-verde);
+    width: 300px;
+    margin-top: 20px;
+    background-color: var(--cor-container);
+    border: none;
+    font-family: var(--fonte-titulo);
 }
