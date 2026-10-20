@@ -513,7 +513,7 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
 /* Reaproveita .secao, .secao__cabecalho, .secao__titulo, .btn-mais e .lista do CSS de Produtos/Apoiadores */
 
 /* Camada fixa e centralizada, como as outras páginas */
-#pagina-caixa {
+#pagina-caixa, #pagina-produçao {
   position: fixed;
   top: 0;
   left: 50%;
@@ -529,6 +529,8 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
   display: none;
   transition: 0.2s ease-in-out;
 }
+
+
 
 #pagina-caixa.active{
   display: block;
@@ -782,4 +784,71 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
     background-color: var(--cor-container);
     border: none;
     font-family: var(--fonte-titulo);
+}
+
+#pagina-produçao.active{
+  display: block;
+  text-align: center;
+  padding-top: 80px;
+
+  h2{
+    margin-bottom: 20px;
+  }
+}
+
+.addprod{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--cor-verde);
+  border-radius: 10px;
+  padding: 20px;
+  gap: 10px;
+
+  label{
+    color: var(--cor-fundo);
+  }
+
+  input{
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  button{
+    padding: 5px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: var(--cor-verde);
+    width: 150px;
+    margin-top: 20px;
+    background-color: var(--cor-container);
+    border: none;
+    font-family: var(--fonte-titulo);
+  }
+
+  h3{
+    color: var(--cor-fundo);
+  }
+}
+
+
+.btn_section_prod{
+  margin-block: 30px;
+  width: 100%;display: flex;
+}
+
+.btn_prod{
+  background-color: transparent;
+  width: 100%;
+  padding-block: 20px;
+  font-family: var(--fonte-titulo);
+  font-size: 20px;
+  border: none;
+}
+
+.btn_prod:focus{
+  border-bottom: 2px solid var(--cor-verde);
 }

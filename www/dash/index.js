@@ -166,3 +166,15 @@ document.getElementById('btn-adicionar-transacao').addEventListener('click', (e)
 
     document.getElementById('fechartrans').addEventListener('click', fecharTransaçao);
 })
+
+//Página de produção
+
+const paginaProducao = document.getElementById('pagina-produçao');
+
+document.getElementById('producao').addEventListener('click', () => {
+    paginaProducao.classList.add('active');
+
+    document.getElementById('fecharprod').addEventListener('click', () => {
+        paginaProducao.classList.remove('active');
+    })
+})
