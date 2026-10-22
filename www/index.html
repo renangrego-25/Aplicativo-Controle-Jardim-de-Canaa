@@ -47,7 +47,7 @@
         <p class="card__texto">Toda a produção listada. Produtos em cura e prontos para venda.</p>
       </article>
 
-      <article class="card card--alto">
+      <article class="card card--alto" id="estoque">
         <h2 class="card__titulo">Estoque</h2>
         <p class="card__texto">Controle quantidade de matéria prima e materiais para uso.</p>
       </article>
@@ -270,6 +270,43 @@
     </div>
   </main>
 
+
+  <main class="estoque" id="pagina-estoque">
+    <div class="voltar" id="fecharest">
+          <a><img width="50" height="50" src="https://img.icons8.com/material-rounded/0b4745/back--v1.png" alt="back--v1"/></a>
+    </div>
+
+    <h2>Controle de estoque <br> primário</h2>
+
+    <div class="btn_section_prod" id="btn_section_prod">
+      <button class="btn_prod" id="mt">Matéria-prima</button>
+      <button class="btn_prod" id="em">Embalagens</button>
+      <button class="btn_prod" id="td">Todos</button>
+    </div>
+
+    <div class="container-estoque" id="mt-prima">
+      <div class="estoque-content">
+        <h2>Insira um item</h2>
+        <input type="text">
+        <label>Quantidade em estoque</label>
+        <input type="number">
+      </div>
+    </div>
+
+    <div class="container-estoque" id="embal">
+      <div class="estoque-content">
+        <h2>Insira um item</h2>
+        <input type="text">
+        <label>Quantidade em estoque</label>
+        <input type="number">
+      </div>
+    </div>
+
+    <div class="container-estoque" id="todoestoque">
+      
+    </div>
+
+  </main>
 
 
   <!-- ===== NAVBAR INFERIOR (fixa em todas as telas) ===== -->

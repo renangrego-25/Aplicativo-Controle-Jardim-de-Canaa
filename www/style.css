@@ -513,7 +513,7 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
 /* Reaproveita .secao, .secao__cabecalho, .secao__titulo, .btn-mais e .lista do CSS de Produtos/Apoiadores */
 
 /* Camada fixa e centralizada, como as outras páginas */
-#pagina-caixa, #pagina-produçao {
+#pagina-caixa, #pagina-produçao, #pagina-estoque {
   position: fixed;
   top: 0;
   left: 50%;
@@ -851,4 +851,46 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
 
 .btn_prod:focus{
   border-bottom: 2px solid var(--cor-verde);
+}
+
+#pagina-estoque.active{
+  text-align: center;
+  display: block;
+}
+
+.container-estoque{
+  display: none;
+}
+
+.container-estoque.ativo{
+  display: block;
+}
+
+.estoque-content{
+  background-color: var(--cor-verde);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 10px;
+  gap: 10px;
+  font-size: 15px;
+
+  h2{
+    color: var(--cor-fundo);
+  }
+
+  label{
+    color: #ffe5c2;
+  }
+
+  input{
+    padding: 10px 0px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.estoque-content.hidden{
+  display: none;
 }

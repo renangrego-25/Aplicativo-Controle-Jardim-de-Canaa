@@ -178,3 +178,57 @@ document.getElementById('producao').addEventListener('click', () => {
         paginaProducao.classList.remove('active');
     })
 })
+
+// Pagina estoque
+
+const paginaEstoque = document.getElementById('pagina-estoque');
+
+document.getElementById('estoque').addEventListener('click', () => {
+    paginaEstoque.classList.add('active');
+
+    document.getElementById('fecharest').addEventListener('click', () => {
+        paginaEstoque.classList.remove('active');
+    })
+})
+
+const botoes = {
+  mt: document.getElementById("mt"),
+  em: document.getElementById("em"),
+  td: document.getElementById("td"),
+};
+
+const containers = {
+  mtPrima: document.getElementById("mt-prima"),
+  embal: document.getElementById("embal"),
+  todos: document.getElementById("todoestoque"),
+};
+
+function esconderTodos() {
+  Object.values(containers).forEach((c) => c.classList.remove("ativo"));
+
+  document.querySelectorAll(".estoque-content").forEach((item) => {
+    item.classList.remove("hidden");
+  });
+}
+
+botoes.mt.addEventListener("click", () => {
+  esconderTodos();
+  containers.mtPrima.classList.add("ativo");
+});
+
+botoes.em.addEventListener("click", () => {
+  esconderTodos();
+  containers.embal.classList.add("ativo");
+});
+
+botoes.td.addEventListener("click", () => {
+  esconderTodos();
+  containers.mtPrima.classList.add("ativo");
+  containers.embal.classList.add("ativo");
+
+  const contEstoque = document.querySelectorAll('.estoque-content');
+
+  contEstoque.forEach((item) => {
+    item.classList.add("hidden");
+  });
+});
