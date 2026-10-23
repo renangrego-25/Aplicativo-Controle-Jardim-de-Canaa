@@ -232,3 +232,52 @@ botoes.td.addEventListener("click", () => {
     item.classList.add("hidden");
   });
 });
+
+// Pagina de investimentos e contas
+const botoesCard = {
+    investimento: document.getElementById('card-investimentos'),
+    contasPagar: document.getElementById('card-contas'),
+}
+
+const cardOpen = {
+    cardInvest: document.getElementById('pagina-investimentos'),
+    cardConta: document.getElementById('pagina-contas'),
+}
+
+botoesCard.investimento.addEventListener('click', () => {
+
+    cardOpen.cardInvest.classList.add('active');
+});
+
+botoesCard.contasPagar.addEventListener('click', () => {
+
+    cardOpen.cardConta.classList.add('active');
+})
+
+const voltaMenu = document.querySelectorAll('.voltarCaixa');
+
+voltaMenu.forEach((botao) => {
+  botao.addEventListener('click', () => {
+    cardOpen.cardConta.classList.remove('active');
+    cardOpen.cardInvest.classList.remove('active');
+  });
+});
+
+//Página de Vendas
+
+const addPedido = document.getElementById('add-pedido');
+const fecharPedido = document.getElementById('fecharpedido');
+const salvarpedido = document.getElementById('salvar-pedido');
+
+function fecharAddpedido (){
+    addPedido.classList.remove('active');
+}
+
+document.getElementById('btn-adicionar-pedido').addEventListener('click', ()=>{
+    addPedido.classList.add('active');
+
+    fecharPedido.addEventListener('click', fecharAddpedido);
+
+    salvarpedido.addEventListener('click', fecharAddpedido);
+})
+

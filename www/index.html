@@ -54,12 +54,12 @@
     </section>
 
     <div class="container_card">
-      <article class="card card--largo">
+      <article class="card card--largo" id="card-investimentos">
         <h2 class="card__titulo">Meus investimentos</h2>
         <p class="card__texto">Analise e controle de investimentos, parcerias, anúncios ADS e muito mais.</p>
       </article>
   
-      <article class="card card--largo">
+      <article class="card card--largo" id="card-contas">
         <h2 class="card__titulo">Contas a pagar</h2>
         <p class="card__texto">Gerencie valores que estão pendentes.</p>
       </article>
@@ -80,6 +80,68 @@
 
     <!-- Os pedidos são inseridos aqui pelo JavaScript -->
     <div class="lista-pedidos" id="lista-pedidos"></div>
+
+    <div class="add-pedido" id="add-pedido">
+      <div class="voltar" id="fecharpedido">
+          <a><img width="50" height="50" src="https://img.icons8.com/material-rounded/fbf4e1/back--v1.png" alt="back--v1"/></a>
+      </div>
+      <h3>Adicionar pedido</h3>
+      <p>Adicione todas as informações do pedido</p>
+    
+      <!-- Dados do cliente -->
+      <label for="nome-cliente">Nome do cliente</label>
+      <input type="text" id="nome-cliente" placeholder="Ex: Renan Silva" required>
+    
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" placeholder="(11) 99999-9999">
+    
+      <!-- Endereço de entrega -->
+      <label for="cep">CEP</label>
+      <input type="text" id="cep" placeholder="00000-000" maxlength="9">
+    
+      <label for="endereco">Endereço</label>
+      <input type="text" id="endereco" placeholder="Rua, número e bairro">
+    
+      <label for="cidade">Cidade</label>
+      <input type="text" id="cidade">
+    
+      <label for="estado">Estado</label>
+      <input type="text" id="estado" maxlength="2" placeholder="SP">
+    
+      <!-- Dados do pedido -->
+      <label for="produto">Produto</label>
+      <input type="text" id="produto" placeholder="Nome do produto" required>
+    
+      <label for="quantidade">Quantidade</label>
+      <input type="number" id="quantidade" min="1" value="1" required>
+    
+      <label for="valor">Valor total (R$)</label>
+      <input type="number" id="valor" min="0" step="0.01" placeholder="0,00" required>
+    
+      <label for="pagamento">Forma de pagamento</label>
+      <select id="pagamento">
+        <option value="pix">Pix</option>
+        <option value="cartao">Cartão</option>
+        <option value="boleto">Boleto</option>
+        <option value="dinheiro">Dinheiro</option>
+      </select>
+    
+      <label for="data-entrega">Data de entrega</label>
+      <input type="date" id="data-entrega">
+    
+      <label for="status">Status</label>
+      <select id="status">
+        <option value="pendente">Pendente</option>
+        <option value="producao">Em produção</option>
+        <option value="enviado">Enviado</option>
+        <option value="entregue">Entregue</option>
+      </select>
+    
+      <label for="obs">Observações</label>
+      <textarea id="obs" rows="3" placeholder="Detalhes adicionais do pedido"></textarea>
+    
+      <button type="button" id="salvar-pedido">Salvar pedido</button>
+</div>
 
 
   </main>
@@ -305,6 +367,214 @@
     <div class="container-estoque" id="todoestoque">
       
     </div>
+
+  </main>
+
+  <!-- ===== PÁGINA: CONTAS A PAGAR ===== -->
+  <main class="tela" id="pagina-contas">
+
+    <div class="voltarCaixa" id="fecharcard">
+          <a><img width="50" height="50" src="https://img.icons8.com/material-rounded/0b4745/back--v1.png" alt="back--v1"/></a>
+    </div>
+
+    <h1 class="pagina-titulo pagina-titulo--longo pagina-titulo--com-voltar">Contas a pagar</h1>
+
+    <!-- Resumo -->
+    <section class="resumo">
+      <h2 class="resumo__rotulo">Total a pagar</h2>
+      <p class="resumo__valor" id="total-contas">R$ 0,00</p>
+    </section>
+
+    <section class="fluxo">
+      <div class="fluxo__coluna">
+        <h2 class="fluxo__titulo">Pago no mês</h2>
+        <div class="fluxo__valor" id="total-pago">R$ 0,00</div>
+      </div>
+      <div class="fluxo__coluna">
+        <h2 class="fluxo__titulo">Em atraso</h2>
+        <div class="fluxo__valor" id="total-atrasado">R$ 0,00</div>
+      </div>
+    </section>
+
+    <!-- Cadastro -->
+    <form class="form" id="form-conta">
+      <h2 class="form__titulo">Nova conta</h2>
+
+      <div class="campo">
+        <label for="conta-nome">Descrição</label>
+        <input type="text" id="conta-nome" placeholder="Ex.: Cera de soja - fornecedor" required>
+      </div>
+
+      <div class="campos-2">
+        <div class="campo">
+          <label for="conta-categoria">Categoria</label>
+          <select id="conta-categoria" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="materia-prima">Matéria-prima</option>
+            <option value="embalagens">Embalagens</option>
+            <option value="fornecedor">Fornecedor</option>
+            <option value="aluguel">Aluguel</option>
+            <option value="energia-agua">Energia / Água</option>
+            <option value="internet">Internet</option>
+            <option value="impostos">Impostos</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="conta-status">Status</label>
+          <select id="conta-status">
+            <option value="pendente" selected>Pendente</option>
+            <option value="paga">Paga</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="campos-2">
+        <div class="campo">
+          <label for="conta-valor">Valor</label>
+          <input type="number" id="conta-valor" min="0" step="0.01" inputmode="decimal" placeholder="0,00" required>
+        </div>
+        <div class="campo">
+          <label for="conta-vencimento">Vencimento</label>
+          <input type="date" id="conta-vencimento" required>
+        </div>
+      </div>
+
+      <div class="campos-2">
+        <div class="campo">
+          <label for="conta-parcelas">Parcelas</label>
+          <input type="number" id="conta-parcelas" min="1" step="1" value="1" inputmode="numeric">
+        </div>
+        <div class="campo">
+          <label for="conta-pagamento">Pagamento</label>
+          <select id="conta-pagamento">
+            <option value="pix">Pix</option>
+            <option value="cartao">Cartão</option>
+            <option value="boleto">Boleto</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="transferencia">Transferência</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="conta-obs">Observações</label>
+        <textarea id="conta-obs" placeholder="Detalhes, número do boleto..."></textarea>
+      </div>
+
+      <button class="btn" type="submit">Salvar conta</button>
+    </form>
+
+    <!-- Lista -->
+    <section class="secao">
+      <div class="secao__cabecalho secao__cabecalho--centro">
+        <h2 class="secao__titulo secao__titulo--caixa-alta secao__titulo--menor">Contas cadastradas</h2>
+      </div>
+
+      <select class="filtro" id="filtro-contas" aria-label="Filtrar por status">
+        <option value="todas">Todas</option>
+        <option value="pendente">Pendentes</option>
+        <option value="paga">Pagas</option>
+        <option value="atrasada">Em atraso</option>
+      </select>
+
+      <!-- As contas são inseridas aqui pelo JavaScript -->
+      <div class="lista" id="lista-contas" data-vazio="Nenhuma conta cadastrada ainda."></div>
+    </section>
+
+  </main>
+
+  <!-- ===== PÁGINA: MEUS INVESTIMENTOS ===== -->
+  <main class="tela" id="pagina-investimentos">
+
+    <div class="voltarCaixa" id="fecharcar">
+          <a><img width="50" height="50" src="https://img.icons8.com/material-rounded/0b4745/back--v1.png" alt="back--v1"/></a>
+    </div>
+
+    <h1 class="pagina-titulo pagina-titulo--longo pagina-titulo--com-voltar">Meus investimentos</h1>
+
+    <!-- Resumo -->
+    <section class="resumo">
+      <h2 class="resumo__rotulo">Total investido</h2>
+      <p class="resumo__valor" id="total-investido">R$ 0,00</p>
+    </section>
+
+    <section class="fluxo">
+      <div class="fluxo__coluna">
+        <h2 class="fluxo__titulo">Aportes</h2>
+        <div class="fluxo__valor" id="qtd-investimentos">0</div>
+      </div>
+      <div class="fluxo__coluna">
+        <h2 class="fluxo__titulo">Retorno esperado</h2>
+        <div class="fluxo__valor" id="total-retorno">R$ 0,00</div>
+      </div>
+    </section>
+
+    <!-- Cadastro -->
+    <form class="form" id="form-investimento">
+      <h2 class="form__titulo">Novo investimento</h2>
+
+      <div class="campo">
+        <label for="inv-nome">Nome</label>
+        <input type="text" id="inv-nome" placeholder="Ex.: Anúncio Instagram" required>
+      </div>
+
+      <div class="campo">
+        <label for="inv-tipo">Tipo de investimento</label>
+        <select id="inv-tipo" required>
+          <option value="" disabled selected>Selecione</option>
+          <option value="anuncios">Anúncios (ADS)</option>
+          <option value="parceria">Parceria</option>
+          <option value="equipamentos">Equipamentos</option>
+          <option value="materia-prima">Matéria-prima</option>
+          <option value="embalagens">Embalagens</option>
+          <option value="outros">Outros</option>
+        </select>
+      </div>
+
+      <div class="campos-2">
+        <div class="campo">
+          <label for="inv-valor">Valor investido</label>
+          <input type="number" id="inv-valor" min="0" step="0.01" inputmode="decimal" placeholder="0,00" required>
+        </div>
+        <div class="campo">
+          <label for="inv-data">Data</label>
+          <input type="date" id="inv-data" required>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="inv-retorno">Retorno esperado (opcional)</label>
+        <input type="number" id="inv-retorno" min="0" step="0.01" inputmode="decimal" placeholder="0,00">
+      </div>
+
+      <div class="campo">
+        <label for="inv-obs">Observações</label>
+        <textarea id="inv-obs" placeholder="Detalhes, prazo, contato..."></textarea>
+      </div>
+
+      <button class="btn" type="submit">Salvar investimento</button>
+    </form>
+
+    <!-- Lista -->
+    <section class="secao">
+      <div class="secao__cabecalho secao__cabecalho--centro">
+        <h2 class="secao__titulo secao__titulo--caixa-alta secao__titulo--menor">Investimentos cadastrados</h2>
+      </div>
+
+      <select class="filtro" id="filtro-investimentos" aria-label="Filtrar por tipo">
+        <option value="todos">Todos os tipos</option>
+        <option value="anuncios">Anúncios (ADS)</option>
+        <option value="parceria">Parceria</option>
+        <option value="equipamentos">Equipamentos</option>
+        <option value="materia-prima">Matéria-prima</option>
+        <option value="embalagens">Embalagens</option>
+        <option value="outros">Outros</option>
+      </select>
+
+      <!-- Os investimentos são inseridos aqui pelo JavaScript -->
+      <div class="lista" id="lista-investimentos" data-vazio="Nenhum investimento cadastrado ainda."></div>
+    </section>
 
   </main>
 
