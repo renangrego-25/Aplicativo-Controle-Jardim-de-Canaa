@@ -972,7 +972,8 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
 /* ===== PÁGINAS: MEUS INVESTIMENTOS e CONTAS A PAGAR ===== */
 
 #pagina-investimentos,
-#pagina-contas {
+#pagina-contas,
+#pagina-ficha {
   position: fixed;
   top: 0;
   left: 50%;
@@ -989,7 +990,8 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
 }
 
 #pagina-investimentos.active,
-#pagina-contas.active{
+#pagina-contas.active, 
+#pagina-ficha{
   display: block;
 }
 

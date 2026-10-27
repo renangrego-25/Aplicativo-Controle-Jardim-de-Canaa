@@ -179,6 +179,14 @@ document.getElementById('producao').addEventListener('click', () => {
     })
 })
 
+document.getElementById('prod-produtos').addEventListener('click', () => {
+    paginaProducao.classList.add('active');
+
+    document.getElementById('fecharprod').addEventListener('click', () => {
+        paginaProducao.classList.remove('active');
+    })
+})
+
 // Pagina estoque
 
 const paginaEstoque = document.getElementById('pagina-estoque');
@@ -188,6 +196,15 @@ document.getElementById('estoque').addEventListener('click', () => {
 
     document.getElementById('fecharest').addEventListener('click', () => {
         paginaEstoque.classList.remove('active');
+    })
+})
+
+document.getElementById('est-produtos').addEventListener('click', () => {
+    paginaEstoque.classList.add('active');
+
+    document.getElementById('fecharest').addEventListener('click', () => {
+        paginaEstoque.classList.remove('active');
+        paginaProducao.classList.remove('active');
     })
 })
 
@@ -280,4 +297,6 @@ document.getElementById('btn-adicionar-pedido').addEventListener('click', ()=>{
 
     salvarpedido.addEventListener('click', fecharAddpedido);
 })
+
+//Página de ficha técnica
 
