@@ -172,17 +172,30 @@
       <div class="secao__cabecalho">
         <div>
           <h2 class="secao__titulo secao__titulo--caixa-alta">Catálogo</h2>
-          <p class="secao__texto">Todos seus produtos listados e estoque pronto.</p>
+          <p class="secao__texto">Todos seus produtos listados.</p>
         </div>
-        <button class="btn-mais" type="button" id="btn-adicionar-produto" aria-label="Adicionar produto">
-          <span class="img-slot img-slot--mais"><img width="50" height="50" src="https://img.icons8.com/ios-glyphs/3e8685/add--v1.png" alt="add--v1"/></span>
-        </button>
       </div>
 
       <!-- Os produtos são inseridos aqui pelo JavaScript -->
       <div class="lista" id="lista-produtos"></div>
     </section>
-
+    
+    <main class= "tela" id="pagina-ficha">
+      <div class="voltar" id="fecharpedido">
+          <a><img width="50" height="50" src="https://img.icons8.com/material-rounded/0b4745/back--v1.png" alt="back--v1"/></a>
+      </div>
+      <h1>ficha técnica</h1>
+  
+      <div class="addficha">
+        <h2>adicione um produto</h2>
+        <label for="">Produto</label>
+        <input type="text">
+        <label for="">Descrição</label>
+        <textarea name="obs" id="descrição"></textarea>
+        <button>salvar</button>
+      </div>
+    </main>
+    
   </main>
 
   <!-- ===== PÁGINA: FORNECEDORES & APOIADORES ===== -->
@@ -190,15 +203,48 @@
 
     <h1 class="pagina-titulo pagina-titulo--longo">Fornecedores &amp; Apoiadores</h1>
 
-    <article class="card card--destaque">
-      <h2 class="card__titulo card__titulo--normal">Fornecedores</h2>
-      <p class="card__texto">Salve contatos e links diretos de fornecedores padrões.</p>
-    </article>
+    <div class="add-fa" id="add-fa">
 
-    <article class="card card--destaque">
-      <h2 class="card__titulo card__titulo--normal">Apoiadores</h2>
-      <p class="card__texto">Contato de influencers ou anunciadores da marca.</p>
-    </article>
+      <div class="title">
+        <h2>Adicione Novo</h2>
+        <button class="btngiro" id="btnopencontent"><img width="30" height="30" src="https://img.icons8.com/ios-filled/fbf4e1/expand-arrow--v1.png" alt="expand-arrow--v1"/></button>
+        
+      </div>
+
+      <div class="descricao-open" id="descopen">
+        <label for="">Nome</label>
+        <input type="text">
+        <label for="">Contato</label>
+        <input type="text" placeholder="Ex: E-mail ou Telefone">
+        <label for="Selecionartipo">Classificação</label>
+        <select name="Tipo" id="Selecionartipo">
+          <option value="">Fornecedor</option>
+          <option value="">Apoiadores</option>
+        </select>
+        <button>Salvar</button>
+      </div>
+    </div>
+
+    <div class="btn_section_prod" id="btn_section_prod">
+      <button class="btn_prod ativo">Fornecedores</button>
+      <button class="btn_prod">Apoiadores</button>
+    </div>
+
+    <div class="addtrans" id="addcupom">
+      <div class="voltar">
+          <a><img width="50" height="50" src="https://img.icons8.com/material-rounded/fbf4e1/back--v1.png" alt="back--v1"/></a>
+      </div>
+      <h2>Adicionar cupom</h2>
+      <label for="#nometransação">CUPOM</label>
+      <input type="text" placeholder="Digite aqui">
+      <label for="valortransação">Valor Minimo</label>
+      <input type="number" title="text">
+      <label for="valortransação">Data de validade</label>
+      <input type="date">
+
+      <button type="submit" id="Salvar">Salvar</button>
+
+    </div>
 
     <section class="secao">
       <div class="secao__cabecalho">
@@ -575,12 +621,10 @@
       <!-- Os investimentos são inseridos aqui pelo JavaScript -->
       <div class="lista" id="lista-investimentos" data-vazio="Nenhum investimento cadastrado ainda."></div>
     </section>
-
-
-    <!-- ===== PÁGINA: FICHA TÉCNICA ===== -->
   
 
   </main>
+
 
 
   <!-- ===== NAVBAR INFERIOR (fixa em todas as telas) ===== -->

@@ -300,3 +300,40 @@ document.getElementById('btn-adicionar-pedido').addEventListener('click', ()=>{
 
 //Página de ficha técnica
 
+const fichaOpen = document.getElementById('pagina-ficha');
+const voltarBtn = document.querySelectorAll('.voltar');
+
+document.getElementById('ficha').addEventListener('click', () => {
+    
+    fichaOpen.classList.add('active');
+
+    voltarBtn.forEach((back) => [
+        back.addEventListener('click', () => {
+            fichaOpen.classList.remove('active');
+        })
+    ])
+})
+
+// pagina de apoiadores e fornecedores
+
+const openContent = document.getElementById('btnopencontent');
+const addFA = document.getElementById('add-fa');
+const descopen = document.getElementById('descopen');
+const addCupom = document.getElementById('addcupom');
+
+openContent.addEventListener('click', () => {
+
+    addFA.classList.toggle('open');
+    openContent.classList.toggle('click');
+    descopen.classList.toggle('active');
+})
+
+document.getElementById('btn-adicionar-cupom').addEventListener('click', () => {
+    addCupom.classList.add('active');
+
+    voltarBtn.forEach((back) => {
+        back.addEventListener('click', () => {
+            addCupom.classList.remove('active');
+        })
+    })
+}) 
