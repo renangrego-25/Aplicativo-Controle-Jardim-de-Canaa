@@ -169,7 +169,6 @@ a { color: inherit; text-decoration: none; cursor: pointer; }
     align-items: center;
     text-align: center;
     padding: 0 16px calc(12px + 60px + 16px);
-    pointer-events: none;
     transition: opacity 0.2s ease;
 }
 

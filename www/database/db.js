@@ -1,25 +1,25 @@
 import { CapacitorSQLite, SQLiteConnection } from "@capacitor-community/sqlite";
+import schema from "./schema.sql?raw"
 
 const sqlite = new SQLiteConnection(CapacitorSQLite);
 
-let db;
+let conexao = null;
 
-export async function conectarBanco() {
-    if (db) return db;
+export function conectarBanco() {
+    if(!conexao) {
+        conexao = (async () => {
+            const existe = (await sqlite.isConnection('jardim_canaa', false)).result;
+            const db = existe
+              ? await sqlite.retrieveConnection('jardim_canaa', false)
+              : await sqlite.createConnection('jardim_canaa', false, 'no-encryption', 1, false);
 
-    db = await sqlite.createConnection(
-        'jardim_canaa',
-        false,
-        'no-encryption',
-        1,
-        false
-    );
-
-    await db.open();
-
-    return db;
-
-}
+      await db.open();
+      await db.execute(schema);     
+      return db;
+    })().catch((erro) => { conexao = null; throw erro; });   // permite tentar de novo
+  }
+  return conexao;
+};
 
 export async function consultarResumoFinanceiro() {
     const banco = await conectarBanco();

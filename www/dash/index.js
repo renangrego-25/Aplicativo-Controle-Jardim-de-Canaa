@@ -6,91 +6,26 @@ const imgVendas = vendas.querySelector('span');
 const todosItens = document.querySelectorAll('.navbar__item'); 
 
 
-vendas.addEventListener('click', (e) => {
-    e.preventDefault;
+const paginasNav = {
+  controle: null,
+  vendas: document.getElementById('pagina-vendas'),
+  produtos: document.getElementById('pagina-produtos'),
+  Apoiadores: document.getElementById('pagina-apoiadores'),
+};
 
-    paginaVenda.classList.add('active');
-    paginaProdutos.classList.remove('active');
-    paginaApoiadores.classList.remove('active');
+navBar.forEach(item => {
+  item.addEventListener('click', () => {
+    Object.values(paginasNav).forEach(p => p && p.classList.remove('active'));
+    if (paginasNav[item.id]) paginasNav[item.id].classList.add('active');
 
-    todosItens.forEach(item => {
-        const icone = item.querySelector('span');
-        item.classList.remove('navbar__item--ativo');
-        icone.classList.remove('img_nav_active');
-        icone.classList.add('img_nav');
+    navBar.forEach(i => {
+      const ativo = i === item;
+      const icone = i.querySelector('span');
+      i.classList.toggle('navbar__item--ativo', ativo);
+      icone.classList.toggle('img_nav_active', ativo);
+      icone.classList.toggle('img_nav', !ativo);
     });
-
-    vendas.classList.add('navbar__item--ativo');
-    imgVendas.classList.remove('img_nav');
-    imgVendas.classList.add('img_nav_active');
-});
-
-const produtos = document.getElementById('produtos');
-const paginaProdutos = document.getElementById('pagina-produtos');
-const imgProdutos = produtos.querySelector('span'); 
-
-
-produtos.addEventListener('click', (e) => {
-    e.preventDefault;
-
-    paginaProdutos.classList.add('active');
-    paginaApoiadores.classList.remove('active');
-
-    todosItens.forEach(item => {
-        const icone = item.querySelector('span');
-        item.classList.remove('navbar__item--ativo');
-        icone.classList.remove('img_nav_active');
-        icone.classList.add('img_nav');
-    });
-
-    produtos.classList.add('navbar__item--ativo');
-    imgProdutos.classList.remove('img_nav');
-    imgProdutos.classList.add('img_nav_active');
-});
-
-
-const apoiadores = document.getElementById('Apoiadores');
-const paginaApoiadores = document.getElementById('pagina-apoiadores');
-const imgApoiadores = apoiadores.querySelector('span'); 
-
-
-apoiadores.addEventListener('click', (e) => {
-    e.preventDefault;
-
-    paginaApoiadores.classList.add('active');
-
-    todosItens.forEach(item => {
-        const icone = item.querySelector('span');
-        item.classList.remove('navbar__item--ativo');
-        icone.classList.remove('img_nav_active');
-        icone.classList.add('img_nav');
-    });
-
-    apoiadores.classList.add('navbar__item--ativo');
-    imgApoiadores.classList.remove('img_nav');
-    imgApoiadores.classList.add('img_nav_active');
-});
-
-const controle = document.getElementById('controle');
-const imgControle = controle.querySelector('span');
-
-controle.addEventListener('click', (e) => {
-    e.preventDefault;
-
-    paginaVenda.classList.remove('active');
-    paginaProdutos.classList.remove('active');
-    paginaApoiadores.classList.remove('active');
-
-    todosItens.forEach(item => {
-        const icone = item.querySelector('span');
-        item.classList.remove('navbar__item--ativo');
-        icone.classList.remove('img_nav_active');
-        icone.classList.add('img_nav');
-    });
-
-    controle.classList.add('navbar__item--ativo');
-    imgControle.classList.remove('img_nav');
-    imgControle.classList.add('img_nav_active');
+  });
 });
 
 
